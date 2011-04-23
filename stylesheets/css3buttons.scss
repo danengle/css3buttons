@@ -54,6 +54,118 @@ a.button, button {
   .primary {
     font-weight: bold
   }
+  &:focus, &:hover {
+    color: $texthovercolor; 
+    border-color: $hoverborder;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    background-color: $hoverlight;
+    background-image: -moz-linear-gradient(top, $hoverdark, $hoverlight); /* FF3.6 */
+    background-image: -ms-linear-gradient(top, $hoverdark, $hoverlight); /* IE10 */
+    background-image: -o-linear-gradient(top, $hoverdark, $hoverlight); /* Opera 11.10+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, from($hoverdark), to($hoverlight)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, $hoverdark, $hoverlight); /* Chrome 10+, Saf5.1+ */
+    background-image: linear-gradient(top, $hoverdark, $hoverlight);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$hoverdark', EndColorStr='$hoverlight'); /* IE6–IE9 */
+  }
+  &:active, .active {
+    border-color: $hoverborder;
+    background-color: $hoverdark;
+    background-image: -moz-linear-gradient(top, $hoverlight, $hoverdark); /* FF3.6 */
+    background-image: -ms-linear-gradient(top, $hoverlight, $hoverdark); /* IE10 */
+    background-image: -o-linear-gradient(top, $hoverlight, $hoverdark); /* Opera 11.10+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, from($hoverlight), to($hoverdark)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, $hoverlight, $hoverdark); /* Chrome 10+, Saf5.1+ */
+    background-image: linear-gradient(top, $hoverlight, $hoverdark);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$hoverlight', EndColorStr='$hoverdark'); /* IE6–IE9 */
+    color: $texthovercolor;
+    text-shadow: none;
+    box-shadow:3px 3px 3px $hovershadow inset,-3px -3px 3px $hovershadow inset;
+  }
+  &:active {
+    top: 1px
+  }
+  .negative {
+    &:focus, &:hover {
+      color: $texthovercolor;
+      background-color: $negativelight;
+      background-image: -moz-linear-gradient(top, $negativedark, $negativelight); /* FF3.6 */
+      background-image: -ms-linear-gradient(top, $negativedark, $negativelight); /* IE10 */
+      background-image: -o-linear-gradient(top, $negativedark, $negativelight); /* Opera 11.10+ */
+      background-image: -webkit-gradient(linear, left top, left bottom, from($negativedark), to($negativelight)); /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, $negativedark, $negativelight); /* Chrome 10+, Saf5.1+ */
+      background-image: linear-gradient(top, $negativedark, $negativelight);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$negativedark', EndColorStr='$negativelight'); /* IE6–IE9 */
+      border-color: $negativeborder;
+    }
+    &:active, .active {
+      background-color: $negativedark;
+      background-image: -moz-linear-gradient(top, $negativelight, $negativedark); /* FF3.6 */
+      background-image: -ms-linear-gradient(top, $negativelight, $negativedark); /* IE10 */
+      background-image: -o-linear-gradient(top, $negativelight, $negativedark); /* Opera 11.10+ */
+      background-image: -webkit-gradient(linear, left top, left bottom, from($negativelight), to($negativedark)); /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, $negativelight, $negativedark); /* Chrome 10+, Saf5.1+ */
+      background-image: linear-gradient(top, $negativelight, $negativedark);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$negativelight', EndColorStr='$negativedark'); /* IE6–IE9 */
+      border-color: $negativeborder;
+      box-shadow:3px 3px 3px $negativeshadow inset,-3px -3px 3px $negativeshadow inset;
+    }
+  }
+  .positive {
+    &:focus, &:hover {
+      background-color: $positivelight;
+      background-image: -moz-linear-gradient(top, $positivedark, $positivelight); /* FF3.6 */
+      background-image: -ms-linear-gradient(top, $positivedark, $positivelight); /* IE10 */
+      background-image: -o-linear-gradient(top, $positivedark, $positivelight); /* Opera 11.10+ */
+      background-image: -webkit-gradient(linear, left top, left bottom, from($positivedark), to($positivelight)); /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, $positivedark, $positivelight); /* Chrome 10+, Saf5.1+ */
+      background-image: linear-gradient(top, $positivedark, $positivelight);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$positivedark', EndColorStr='$positivelight'); /* IE6–IE9 */
+      border-color: $positiveborder;
+    }
+    &:active, .active {
+      background-color: $positivedark;
+      background-image: -moz-linear-gradient(top, $positivelight, $positivedark); /* FF3.6 */
+      background-image: -ms-linear-gradient(top, $positivelight, $positivedark); /* IE10 */
+      background-image: -o-linear-gradient(top, $positivelight, $positivedark); /* Opera 11.10+ */
+      background-image: -webkit-gradient(linear, left top, left bottom, from($positivelight), to($positivedark)); /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, $positivelight, $positivedark); /* Chrome 10+, Saf5.1+ */
+      background-image: linear-gradient(top, $positivelight, $positivedark);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$positivelight', EndColorStr='$positivedark'); /* IE6–IE9 */
+      border-color: $positiveborder;
+      box-shadow:3px 3px 3px $positiveshadow inset,-3px -3px 3px $positiveshadow inset;
+    }
+  }
+  &.pill {
+    -webkit-border-radius: $pillradius; -moz-border-radius: $pillradius; border-radius: $pillradius;
+    padding: 5px 10px 4px 10px;
+    *padding: 4px 10px;
+  }
+  &.left {
+    -webkit-border-bottom-right-radius: 0px;
+    -webkit-border-top-right-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-topright: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-right: 0px;
+  }
+  &.middle {
+    margin-right: 0px;
+    margin-left: 0px;
+    -webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;
+    border-right: none;
+    border-left: none;
+  }
+  &.right {
+    -webkit-border-bottom-left-radius: 0px;
+    -webkit-border-top-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -moz-border-radius-topleft: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-left: 0px;
+  }
 }
 button {
   margin-left: 0;
@@ -62,114 +174,6 @@ button {
 }
 button::-moz-focus-inner {
   border: 0; padding:0px;
-}
-a.button:focus, button:focus, a.button:hover, button:hover {
-  color: $texthovercolor; 
-  border-color: $hoverborder;
-  text-decoration: none;
-  text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
-  background-color: $hoverlight;
-  background-image: -moz-linear-gradient(top, $hoverdark, $hoverlight); /* FF3.6 */
-  background-image: -ms-linear-gradient(top, $hoverdark, $hoverlight); /* IE10 */
-  background-image: -o-linear-gradient(top, $hoverdark, $hoverlight); /* Opera 11.10+ */
-  background-image: -webkit-gradient(linear, left top, left bottom, from($hoverdark), to($hoverlight)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, $hoverdark, $hoverlight); /* Chrome 10+, Saf5.1+ */
-  background-image: linear-gradient(top, $hoverdark, $hoverlight);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$hoverdark', EndColorStr='$hoverlight'); /* IE6–IE9 */
-}
-a.button:active, button:active, a.button.active, button.active {
-  border-color: $hoverborder;
-  background-color: $hoverdark;
-  background-image: -moz-linear-gradient(top, $hoverlight, $hoverdark); /* FF3.6 */
-  background-image: -ms-linear-gradient(top, $hoverlight, $hoverdark); /* IE10 */
-  background-image: -o-linear-gradient(top, $hoverlight, $hoverdark); /* Opera 11.10+ */
-  background-image: -webkit-gradient(linear, left top, left bottom, from($hoverlight), to($hoverdark)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, $hoverlight, $hoverdark); /* Chrome 10+, Saf5.1+ */
-  background-image: linear-gradient(top, $hoverlight, $hoverdark);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$hoverlight', EndColorStr='$hoverdark'); /* IE6–IE9 */
-  color: $texthovercolor;
-  text-shadow: none;
-  box-shadow:3px 3px 3px $hovershadow inset,-3px -3px 3px $hovershadow inset;
-}
-a.button:active, button:active {
-  top: 1px
-}
-a.button.negative:focus, button.negative:focus, a.button.negative:hover, button.negative:hover {
-  color: $texthovercolor;
-  background-color: $negativelight;
-  background-image: -moz-linear-gradient(top, $negativedark, $negativelight); /* FF3.6 */
-  background-image: -ms-linear-gradient(top, $negativedark, $negativelight); /* IE10 */
-  background-image: -o-linear-gradient(top, $negativedark, $negativelight); /* Opera 11.10+ */
-  background-image: -webkit-gradient(linear, left top, left bottom, from($negativedark), to($negativelight)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, $negativedark, $negativelight); /* Chrome 10+, Saf5.1+ */
-  background-image: linear-gradient(top, $negativedark, $negativelight);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$negativedark', EndColorStr='$negativelight'); /* IE6–IE9 */
-  border-color: $negativeborder;
-}
-a.button.negative:active, button.negative:active, a.button.negative.active, button.negative.active {
-  background-color: $negativedark;
-  background-image: -moz-linear-gradient(top, $negativelight, $negativedark); /* FF3.6 */
-  background-image: -ms-linear-gradient(top, $negativelight, $negativedark); /* IE10 */
-  background-image: -o-linear-gradient(top, $negativelight, $negativedark); /* Opera 11.10+ */
-  background-image: -webkit-gradient(linear, left top, left bottom, from($negativelight), to($negativedark)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, $negativelight, $negativedark); /* Chrome 10+, Saf5.1+ */
-  background-image: linear-gradient(top, $negativelight, $negativedark);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$negativelight', EndColorStr='$negativedark'); /* IE6–IE9 */
-  border-color: $negativeborder;
-  box-shadow:3px 3px 3px $negativeshadow inset,-3px -3px 3px $negativeshadow inset;
-}
-a.button.positive:focus, button.positive:focus, a.button.positive:hover, button.positive:hover {
-  background-color: $positivelight;
-  background-image: -moz-linear-gradient(top, $positivedark, $positivelight); /* FF3.6 */
-  background-image: -ms-linear-gradient(top, $positivedark, $positivelight); /* IE10 */
-  background-image: -o-linear-gradient(top, $positivedark, $positivelight); /* Opera 11.10+ */
-  background-image: -webkit-gradient(linear, left top, left bottom, from($positivedark), to($positivelight)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, $positivedark, $positivelight); /* Chrome 10+, Saf5.1+ */
-  background-image: linear-gradient(top, $positivedark, $positivelight);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$positivedark', EndColorStr='$positivelight'); /* IE6–IE9 */
-  border-color: $positiveborder;
-}
-a.button.positive:active, button.positive:active, a.button.positive.active, button.positive.active {
-  background-color: $positivedark;
-  background-image: -moz-linear-gradient(top, $positivelight, $positivedark); /* FF3.6 */
-  background-image: -ms-linear-gradient(top, $positivelight, $positivedark); /* IE10 */
-  background-image: -o-linear-gradient(top, $positivelight, $positivedark); /* Opera 11.10+ */
-  background-image: -webkit-gradient(linear, left top, left bottom, from($positivelight), to($positivedark)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, $positivelight, $positivedark); /* Chrome 10+, Saf5.1+ */
-  background-image: linear-gradient(top, $positivelight, $positivedark);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$positivelight', EndColorStr='$positivedark'); /* IE6–IE9 */
-  border-color: $positiveborder;
-  box-shadow:3px 3px 3px $positiveshadow inset,-3px -3px 3px $positiveshadow inset;
-}
-a.button.pill, button.pill {
-  -webkit-border-radius: $pillradius; -moz-border-radius: $pillradius; border-radius: $pillradius;
-  padding: 5px 10px 4px 10px;
-  *padding: 4px 10px;
-}
-a.button.left, button.left {
-  -webkit-border-bottom-right-radius: 0px;
-  -webkit-border-top-right-radius: 0px;
-  -moz-border-radius-bottomright: 0px;
-  -moz-border-radius-topright: 0px;
-  border-bottom-right-radius: 0px;
-  border-top-right-radius: 0px;
-  margin-right: 0px;
-}
-a.button.middle, button.middle {
-  margin-right: 0px;
-  margin-left: 0px;
-  -webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;
-  border-right: none;
-  border-left: none;
-}
-a.button.right, button.right {
-  -webkit-border-bottom-left-radius: 0px;
-  -webkit-border-top-left-radius: 0px;
-  -moz-border-radius-bottomleft: 0px;
-  -moz-border-radius-topleft: 0px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  margin-left: 0px;
 }
 a.button.left:active, button.left:active,
 a.button.middle:active, button.middle:active,
