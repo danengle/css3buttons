@@ -1,18 +1,28 @@
-$defaultlight:#f5f5f5;
-$defaultdark:#f0f0f0;
-$defaultborder:#B8B8B8;
-$hoverlight:#6FC4F6;
-$hoverdark:#9FD8F9;
-$hoverborder:#388AD4;
-$positivelight:#BBDE8C;
-$positivedark:#A3D364;
-$positiveborder:#A3D364;
-$negativelight:#FF9494;
-$negativedark:#FF7A7A;
-$negativeborder:#FF4747;
 $textcolor:#3C3C3D;
 $texthovercolor:#fff;
 $textshadowcolor:#fff;
+
+$defaultlight:#f5f5f5;
+$defaultdark:#f0f0f0;
+$defaultborder:#B8B8B8;
+
+$hoverlight:#6FC4F6;
+$hoverdark:#9FD8F9;
+$hoverborder:#388AD4;
+$hovershadow:#80a0b1;
+
+$positivelight:#BBDE8C;
+$positivedark:#A3D364;
+$positiveborder:#A3D364;
+$positiveshadow:#7d8d67;
+
+$negativelight:#FF9494;
+$negativedark:#FF7A7A;
+$negativeborder:#FF4747;
+$negativeshadow:#ad5f5f;
+
+$buttonradius:3px;
+$pillradius:18px;
 
 a.button, button {
   display: inline-block;
@@ -34,7 +44,7 @@ a.button, button {
   cursor: pointer;
   text-decoration: none;
   border: 1px solid $defaultborder;
-  -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;
+  -webkit-border-radius: $buttonradius; -moz-border-radius: $buttonradius; border-radius: $buttonradius;
   outline: none;
   position: relative;
   zoom: 1;
@@ -79,6 +89,7 @@ a.button:active, button:active, a.button.active, button.active {
             filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$hoverlight', EndColorStr='$hoverdark'); /* IE6–IE9 */
   color: $texthovercolor;
   text-shadow: none;
+  box-shadow:3px 3px 3px $hovershadow inset,-3px -3px 3px $hovershadow inset;
 }
 a.button:active, button:active {
   top: 1px
@@ -105,6 +116,7 @@ a.button.negative:active, button.negative:active, a.button.negative.active, butt
   background-image: linear-gradient(top, $negativelight, $negativedark);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$negativelight', EndColorStr='$negativedark'); /* IE6–IE9 */
   border-color: $negativeborder;
+  box-shadow:3px 3px 3px $negativeshadow inset,-3px -3px 3px $negativeshadow inset;
 }
 a.button.positive:focus, button.positive:focus, a.button.positive:hover, button.positive:hover {
   background-color: $positivelight;
@@ -127,11 +139,38 @@ a.button.positive:active, button.positive:active, a.button.positive.active, butt
   background-image: linear-gradient(top, $positivelight, $positivedark);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$positivelight', EndColorStr='$positivedark'); /* IE6–IE9 */
   border-color: $positiveborder;
+  box-shadow:3px 3px 3px $positiveshadow inset,-3px -3px 3px $positiveshadow inset;
 }
-a.button.pill, button.pill { -webkit-border-radius: 19px; -moz-border-radius: 19px; border-radius: 19px; padding: 5px 10px 4px 10px; *padding: 4px 10px; }
-a.button.left, button.left { -webkit-border-bottom-right-radius: 0px; -webkit-border-top-right-radius: 0px; -moz-border-radius-bottomright: 0px; -moz-border-radius-topright: 0px; border-bottom-right-radius: 0px; border-top-right-radius: 0px; margin-right: 0px; }
-a.button.middle, button.middle { margin-right: 0px; margin-left: 0px; -webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px; border-right: none; border-left: none; }
-a.button.right, button.right { -webkit-border-bottom-left-radius: 0px; -webkit-border-top-left-radius: 0px; -moz-border-radius-bottomleft: 0px; -moz-border-radius-topleft: 0px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; margin-left: 0px; }
+a.button.pill, button.pill {
+  -webkit-border-radius: $pillradius; -moz-border-radius: $pillradius; border-radius: $pillradius;
+  padding: 5px 10px 4px 10px;
+  *padding: 4px 10px;
+}
+a.button.left, button.left {
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-topright: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  margin-right: 0px;
+}
+a.button.middle, button.middle {
+  margin-right: 0px;
+  margin-left: 0px;
+  -webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;
+  border-right: none;
+  border-left: none;
+}
+a.button.right, button.right {
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-left: 0px;
+}
 a.button.left:active, button.left:active,
 a.button.middle:active, button.middle:active,
 a.button.right:active, button.right:active { top: 0px }
