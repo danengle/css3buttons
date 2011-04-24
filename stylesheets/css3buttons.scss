@@ -34,6 +34,17 @@ $pillradius:18px;
   background-image: linear-gradient(top, $color1, $color2);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$color1', EndColorStr='$color2'); /* IE6–IE9 */
 }
+@mixin active_button($color) {
+  -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px,  
+                         $color 2px 1px 3px inset,  
+                         rgba(0, 0, 0, 0.4) 0px -5px 12px inset;  
+  -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px,  
+                        $color 2px 1px 3px inset,  
+                        rgba(0, 0, 0, 0.4) 0px -5px 12px inset;  
+  box-shadow: rgba(255, 255, 255, 0.4) 0 1px,  
+                  $color 2px 1px 3px inset,  
+                  rgba(0, 0, 0, 0.4) 0px -5px 12px inset;  
+}
 a.button, button {
   @include background_gradient($defaultlight, $defaultdark);
   display: inline-block;
@@ -66,11 +77,11 @@ a.button, button {
   }
   &:active, .active {
     @include background_gradient($hoverdark, $hoverlight);
+    @include active_button($hovershadow);
     border-color: $hoverborder;
     background-color: $hoverdark;
     color: $texthovercolor;
     text-shadow: none;
-    box-shadow:3px 3px 3px $hovershadow inset,-3px -3px 3px $hovershadow inset;
   }
   &:active {
     top: 1px
@@ -83,8 +94,8 @@ a.button, button {
     }
     &:active, .active {
       @include background_gradient($negativedark, $negativelight);
+      @include active_button($negativeshadow);
       border-color: $negativeborder;
-      box-shadow:3px 3px 3px $negativeshadow inset,-3px -3px 3px $negativeshadow inset;
     }
   }
   &.positive {
@@ -94,8 +105,8 @@ a.button, button {
     }
     &:active, .active {
       @include background_gradient($positivedark, $positivelight);
+      @include active_button($positiveshadow);
       border-color: $positiveborder;
-      box-shadow:3px 3px 3px $positiveshadow inset,-3px -3px 3px $positiveshadow inset;
     }
   }
   &.pill {
